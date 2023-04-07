@@ -80,4 +80,9 @@ function addToCart(event) {
   cartItem.forEach((item) => (price += item.price * item.quantity));
   calculateTotal(price);
 }
- 
+
+// Calculate total price: 計算總金額   
+function calculateTotal(amount) {
+  total = amount;
+  totalAmount.textContent = total;
+}
