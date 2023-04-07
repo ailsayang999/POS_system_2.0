@@ -105,3 +105,10 @@ function submit(event) {
     console.log("晚點再用");
   }
 }
+
+// reset data in cart 
+function reset() {
+  totalAmount.textContent = 0;
+  cart.innerHTML = "";
+  cartItem = [];
+}
