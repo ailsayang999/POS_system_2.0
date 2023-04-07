@@ -112,3 +112,7 @@ function reset() {
   cart.innerHTML = "";
   cartItem = [];
 }
+
+//add event listener to menu and foot
+menu.addEventListener("click", addToCart);
+foot.addEventListener("click", submit);
