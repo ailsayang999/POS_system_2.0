@@ -86,3 +86,22 @@ function calculateTotal(amount) {
   total = amount;
   totalAmount.textContent = total;
 }
+
+//function: send order 送出訂單
+function submit(event) {
+  let target = event.target;
+  if (target.matches(".submit-btn")) {
+    const alertItem = cartItem
+      .map(
+        (item) =>
+          `${item.name} X ${item.quantity} 小計：${item.price * item.quantity}`
+      )
+      .join("\n");
+    alert(`感謝您的消費~\n${alertItem}\n共${totalAmount.textContent}元`);
+    let time = new Date();
+    localStorage.setItem(`${time.toLocaleString()}`, JSON.stringify(cartItem));
+    reset();
+  } else if (target.matches(".do-btn")) {
+    console.log("晚點再用");
+  }
+}
